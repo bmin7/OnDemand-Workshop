@@ -1,2 +1,7 @@
 # OnDemand-Workshop Guide
-Welcome
+
+Welcome to Panther's OnDemand Workshop Guide. This sheet will provide resources throughout your workshop experience allowing you to work at your own pace and dig into additional resources available to you. Each Hands-On Lesson is outlined below with step by step instructions and code-snippets to expedite your experience. Additionally, there are links to documentation, key phrases, and resources you'll leverage during this workshop. For any additional support you need, please visit www.panther.com 
+
+## PreRequisites 
+
+
