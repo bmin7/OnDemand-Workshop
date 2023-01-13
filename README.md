@@ -75,5 +75,70 @@ Before getting started, please complete the prerequisities below:
 2. If it passes, you've completed your first detection. 
 
 
+## Lesson 2 - Tune a Panther Provided Detection for your environment
 
+**Part 1 - Clone and Edit a Panther Managed Detection from a Pack**
+
+1. In the Panther Console - Navigate to Build > Packs > Panther Core AWS Pack
+2. Select the detection called "AWS GuardDuty High Severity Finding"
+3. Select Clone & Edit on the Top Right
+- Note if you're using your own production instance for this workshop, you can not clone a detection more than once.
+
+**Part 2 - Prepare Unit Test**
+
+1. Name the detection a unique name with your initials - Sample "AWS GuardDuty High Severity Finding - Brandon"
+2. Select Functions & Tests
+3. Scroll down and populate test with log if not already done
+
+**CloudTrail GuardDuty Log**
+```
+{
+"accountId": "123456789012",
+"arn": "arn:aws:guardduty:us-west-2:123456789012:detector/111111bbbbbbbbbb5555555551111111/finding/90b82273685661b9318f078d0851fe9a",
+"createdAt": "2020-02-14T18:12:22.316Z",
+"description": "Principal AssumedRole:IAMRole attempted to add a highly permissive policy to themselves.",
+"id": "eeb88ab56556eb7771b266670dddee5a",
+"partition": "aws",
+"region": "us-east-1",
+"schemaVersion": "2.0",
+"service": {
+	"action": {
+		"actionType": "AWS_API_CALL",
+		"awsApiCallAction": {
+			"affectedResources": {
+				"AWS::IAM::Role": "arn:aws:iam::123456789012:role/IAMRole"
+			},
+			"api": "PutRolePolicy",
+			"callerType": "Domain",
+			"domainDetails": {
+				"domain": "cloudformation.amazonaws.com"
+			},
+			"serviceName": "iam.amazonaws.com"
+		}
+	},
+	"additionalInfo": {},
+	"archived": false,
+	"count": 1,
+	"detectorId": "111111bbbbbbbbbb5555555551111111",
+	"eventFirstSeen": "2020-02-14T17:59:17Z",
+	"eventLastSeen": "2020-02-14T17:59:17Z",
+	"evidence": null,
+	"resourceRole": "TARGET",
+	"serviceName": "guardduty"
+},
+"severity": 8,
+"title": "Principal AssumedRole:IAMRole attempted to add a policy to themselves that is highly permissive.",
+"type": "PrivilegeEscalation:IAMUser/AdministrativePermissions",
+"updatedAt": "2020-02-14T18:12:22.316Z"
+}
+```
+
+
+
+
+**Part 3 - Tune Detection with Severity Function**
+1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
+2. Modify the rule function to alert on events from severity 1 to 10
+3. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
+4. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
 
