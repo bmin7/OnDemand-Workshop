@@ -7,4 +7,7 @@ Welcome to Panther's OnDemand Workshop Guide. This sheet will provide resources 
 Before getting started, please review the prerequisities below: 
 
 1. Request a Panther Trial [https://panther.com/free-trial/]
-2. 
+*Note that this may take up to 24 Hours to Provision
+
+2. Install Panther Analysis Tool Prerequisites for local development in Lesson 3
+- Check
