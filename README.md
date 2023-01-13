@@ -4,7 +4,7 @@ Welcome to Panther's OnDemand Workshop Guide. This sheet will provide resources 
 
 ## PreRequisites 
 
-Before getting started, please review the prerequisities below: 
+Before getting started, please complete the prerequisities below: 
 
 **Request a [Panther Trial](https://panther.com/free-trial/)**
 - *Note that this may take up to 24 Hours to Provision*
@@ -13,4 +13,11 @@ Before getting started, please review the prerequisities below:
 1. Install [Pip3 and Python3](https://medium.com/swlh/installing-python-and-pip-on-mac-72b7639a58) to your local Machine 
 2. [Create](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) a Github account (If you already have one, skip this step)
 3. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to your local machine
+
+## Lesson 1 - Writing Your First Panther Detection from Scratch
+
+**Part 1 - Create New Detection in Panther UI**
+1. In the Panther Console - Navigate to Build > Detections > Create New
+2. Give it a unique name "Brandon's Failed AWS Login Rule" (Use your own name or initials)
+3. Set Severity to "Medium" and Log Types "AWS.CloudTrail"
 
