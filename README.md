@@ -10,6 +10,7 @@ Before getting started, please review the prerequisities below:
 - *Note that this may take up to 24 Hours to Provision*
 
 **Install Panther Analysis Tool Prerequisites for local development in Lesson 3**
-
-1. Install Pip3 and Python3 to your local Machine [https://medium.com/swlh/installing-python-and-pip-on-mac-72b7639a58]
+1. Install [Pip3 and Python3](https://medium.com/swlh/installing-python-and-pip-on-mac-72b7639a58) to your local Machine 
 2. [Create](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) a Github account (If you already have one, skip this step)
+3. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to your local machine
+
