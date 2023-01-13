@@ -84,9 +84,9 @@ Before getting started, please complete the prerequisities below:
 3. Select Clone & Edit on the Top Right
 - Note if you're using your own production instance for this workshop, you can not clone a detection more than once.
 
-**Part 2 - Prepare Unit Test**
+**Part 2 - Create Detection and add Unit Test*
 
-1. Name the detection a unique name with your initials - Sample "AWS GuardDuty High Severity Finding - Brandon"
+1. Name the detection a unique name with your initials - Sample "AWS GuardDuty High Severity Finding - Brandon". All other fields should already be pre-populated.
 2. Select Functions & Tests
 3. Scroll down and populate test with log if not already done
 
