@@ -21,3 +21,52 @@ Before getting started, please complete the prerequisities below:
 2. Give it a unique name "Brandon's Failed AWS Login Rule" (Use your own name or initials)
 3. Set Severity to "Medium" and Log Types "AWS.CloudTrail"
 
+**Part 2 - Create Unit Test**
+1. Select "Functions and Tests" in the tab below
+2. Scroll down and select the "Create Test" button
+3. Delete the brackets populated. Copy and paste the sample event below into your console:
+
+**CloudTrail logging IAM Event Log**
+```
+{
+	"additionalEventData": {
+		"LoginTo": "https://console.aws.amazon.com/console/",
+		"MFAUsed": "No",
+		"MobileVersion": "No"
+	},
+	"awsRegion": "us-east-1",
+	"eventID": "1",
+	"eventName": "ConsoleLogin",
+	"eventSource": "signin.amazonaws.com",
+	"eventTime": "2019-01-01T00:00:00Z",
+	"eventType": "AwsConsoleSignIn",
+	"eventVersion": "1.05",
+	"p_event_time": "2021-06-04 09:59:53.650807",
+	"p_log_type": "AWS.CloudTrail",
+	"p_parse_time": "2021-06-04 10:02:33.650807",
+	"recipientAccountId": "123456789012",
+	"requestParameters": null,
+	"responseElements": {
+		"ConsoleLogin": "Failure"
+	},
+	"sourceIPAddress": "111.111.111.111",
+	"userAgent": "Mozilla",
+	"userIdentity": {
+		"accountId": "123456789012",
+		"arn": "arn:aws:iam::123456789012:user/tester",
+		"principalId": "1111",
+		"type": "IAMUser",
+		"userName": "tester"
+	}
+}
+```
+
+**Part 3 - Writing your detection code**
+
+1. Identity the fields within the event log that correspond to a failed login. This is the Console Login field nested under the Response Element
+2. In order to grab the nested field, we need to use the [deep_get function](https://docs.panther.com/writing-detections/globals#deep_get). This is located within the a [Panther Helper Library](https://docs.panther.com/writing-detections/globals) called panther_base_helpers.
+3. Import deep_get function from the panther_base_helpers library ```from panther_base_helpers import deep_get``` into your detection
+4. All detections require a "rule" function. To add yours write ```def rule(event)```
+5. 
+6. Using event.get and deep_get to grab attributes from the event log, write a return statement that is TRUE when a console login attempt fails
+
