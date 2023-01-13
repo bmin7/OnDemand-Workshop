@@ -6,8 +6,10 @@ Welcome to Panther's OnDemand Workshop Guide. This sheet will provide resources 
 
 Before getting started, please review the prerequisities below: 
 
-1. Request a Panther Trial [https://panther.com/free-trial/]
-*Note that this may take up to 24 Hours to Provision
+**Request a Panther Trial [https://panther.com/free-trial/]**
+- *Note that this may take up to 24 Hours to Provision*
 
-2. Install Panther Analysis Tool Prerequisites for local development in Lesson 3
-- Check
+**Install Panther Analysis Tool Prerequisites for local development in Lesson 3**
+
+1. Install Pip3 and Python3 to your local Machine [https://medium.com/swlh/installing-python-and-pip-on-mac-72b7639a58]
+2. [Create](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) a Github account (If you already have one, skip this step)
