@@ -67,6 +67,13 @@ Before getting started, please complete the prerequisities below:
 2. In order to grab the nested field, we need to use the [deep_get function](https://docs.panther.com/writing-detections/globals#deep_get). This is located within the a [Panther Helper Library](https://docs.panther.com/writing-detections/globals) called panther_base_helpers.
 3. Import deep_get function from the panther_base_helpers library ```from panther_base_helpers import deep_get``` into your detection
 4. All detections require a "rule" function. To add yours write ```def rule(event)```
-5. 
-6. Using event.get and deep_get to grab attributes from the event log, write a return statement that is TRUE when a console login attempt fails
+5. Using event.get and deep_get to grab attributes from the event log, write a return statement that is TRUE when a console login attempt fails
+
+**Part 4 - Testing Your Detection**
+
+1. Run a Test on your new detection to check for syntax errors and proper logic
+2. If it passes, you've completed your first detection. 
+
+
+
 
