@@ -258,20 +258,25 @@ This section applies everything we've talked about in the above sections. Use ea
 ```
 </details>
 
+
 ## Answers
 
 <details><summary>Lesson 1 Answers</summary>
+
 ```
 from panther_base_helpers import deep_get
 
 def rule(event):
     return event.get("eventName") == "ConsoleLogin" and deep_get(event,"responseElements","ConsoleLogin") == "Failure"
-```	
+
+```
+
 </details>
 
 
 
 <details><summary>Lesson 2 Answers</summary>
+
 ```
 def rule(event):
     return 1.0 <= float(event.get("severity", 0)) <= 10
@@ -284,6 +289,7 @@ def severity(event):
     else:
         return "MEDIUM"
 ```
+
 </details>
 
 	
