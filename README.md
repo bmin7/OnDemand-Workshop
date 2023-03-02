@@ -34,9 +34,9 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 3. Delete the brackets populated. Copy and paste the sample event below into your console:
 
 
-<details><summary>**Sample CloudTrail Event**</summary>
+<details><summary>Sample CloudTrail Event</summary>
 
-**CloudTrail logging IAM Event Log**
+**CloudTrail Event Log**
 ```
 {
 	"additionalEventData": {
