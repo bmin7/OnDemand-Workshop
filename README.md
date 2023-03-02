@@ -134,11 +134,55 @@ Before getting started, please complete the prerequisities below:
 ```
 
 
-
-
 **Part 3 - Tune Detection with Severity Function**
 1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
 2. Modify the rule function to alert on events from severity 1 to 10
 3. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
 4. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
+
+
+## Lesson 3 - Using Local Developer Tools to Write, Test, and Deploy Detection
+Use the Panther Analysis Tool (PAT) with local developer tools to write and test new detections. 
+
+
+**Terms we'll reference**
+- [Panther Analysis Tool](https://docs.panther.com/panther-developer-workflows/panther-analysis-tool#overview)
+- [API Key](https://docs.panther.com/panther-developer-workflows/api#how-to-use-panthers-api)
+
+
+**Exercise 3 Steps**
+1. Install Prerequisites on local Machine (Pip, Python3, Git)
+2. Install Panther Analysis Tool 
+```pip install panther_analysis_tool```
+3. Verify proper version (for those of you that have it already, you don't have to update your version)
+```panther_analysis_tool --version```
+4. Fork off Panther Analysis Tool to local 
+```git clone https://github.com/panther-labs/panther-analysis.git```
+5. Create API Token in Panther Console - Select the gear on the top right > API Tokens > Create New Token
+6. Check permissions for Read Panther Settings Info, Bulk Upload, Manage Policies, Manage Rules, Manage Schedule Queries, View Log Sources, Manage Log Sources
+7. Use Check-Connection to verify API setup is successful (This is only on Panther Analysis Tool 0.15.1 and up)
+```panther_analysis_tool check-connection --api-host DOMAIN --api-token TOKEN```
+7. Create new directory and copy a .py and .yml file
+8. Modify .py file and .yml file
+9. Test the rule
+```panther_analysis_tool test --path <path to rule directory>```
+10. Once verified, upload the rule
+```panther_analysis_tool upload --path <path to rule> --api-host DOMAIN --api-token TOKEN```
+11. Check Panther Console for changes
+
+
+
+## Addtional Resources
+**Helpful Links**
+- [All Available Rule Functions](https://github.com/panther-labs/panther-analysis/blob/master/templates/example_rule.py)
+- [What is Deep_Get?](https://docs.panther.com/writing-detections/globals#deep_get)
+- [What are Packs?](https://docs.panther.com/writing-detections/detection-packs)
+- [Panther Analysis Tool](https://docs.panther.com/panther-developer-workflows/panther-analysis-tool#overview)
+- [Lookup Tables](https://docs.panther.com/enrichment/lookup-tables)
+- [Unit Tests](https://docs.panther.com/writing-detections/testing#mocks)
+- [Panther Analysis Tool](https://docs.panther.com/panther-developer-workflows/panther-analysis-tool#overview)
+- [API Key](https://docs.panther.com/panther-developer-workflows/api#how-to-use-panthers-api)
+
+**Support**
+-[Support Email](support@panther.com)
 
