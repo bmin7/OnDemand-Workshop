@@ -71,7 +71,6 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 	}
 }
 ```
-
 </details>
 
 
@@ -160,7 +159,7 @@ Panther provides over 400+ detections out-of-the-box that can be customized to a
 "updatedAt": "2020-02-14T18:12:22.316Z"
 }
 ```
-<details>
+</details>
 
 	
 **Part 3 - Tune Detection with Severity Function**
