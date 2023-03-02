@@ -29,10 +29,13 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 3. Set Severity to "Medium" and Log Types "AWS.CloudTrail"
 
 **Part 2 - Create Unit Test**
-1. Select "Functions and Tests" in the tab below
-2. Scroll down and select the "Create Test" button
+1. Select _"Functions and Tests"_ in the tab below
+2. Scroll down and select the _"Create Test"_ button
 3. Delete the brackets populated. Copy and paste the sample event below into your console:
 
+
+<details><summary>CLICK ME</summary>
+<p>
 **CloudTrail logging IAM Event Log**
 ```
 {
@@ -67,6 +70,9 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 	}
 }
 ```
+
+</p>
+</details>
 
 **Part 3 - Writing your detection code**
 
