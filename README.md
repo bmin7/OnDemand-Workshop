@@ -35,7 +35,7 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 
 
 <details><summary>CLICK ME</summary>
-<p>
+
 **CloudTrail logging IAM Event Log**
 ```
 {
@@ -71,7 +71,6 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 }
 ```
 
-</p>
 </details>
 
 **Part 3 - Writing your detection code**
