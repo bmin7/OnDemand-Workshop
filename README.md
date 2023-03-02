@@ -16,9 +16,16 @@ Before getting started, please complete the prerequisities below:
 
 ## Lesson 1 - Writing Your First Panther Detection from Scratch
 
-**Part 1 - Create New Detection in Panther UI**
-1. In the Panther Console - Navigate to Build > Detections > Create New
-2. Give it a unique name "Brandon's Failed AWS Login Rule" (Use your own name or initials)
+Detection-as-Code starts with the basics of creating a detection with Python code logic. In order to create a base-level of what we'll learn in this workshop, we'll begin by creating our first Python-based detection in the Panther Console. This will touch on several of the terms below: 
+
+- [Deep_Get](https://docs.panther.com/writing-detections#using-global-helper-functions)
+- [Helper Functions](https://docs.panther.com/writing-detections/globals)
+- [Unit Tests](https://docs.panther.com/writing-detections/testing)
+
+
+**Part 1 - Create New Detection in the Panther Console**
+1. In the Panther Console - Navigate to _Build > Detections > Create New_
+2. Give it a unique name _"Brandon's Failed AWS Console Login Rule"_ (Use your own name or initials)
 3. Set Severity to "Medium" and Log Types "AWS.CloudTrail"
 
 **Part 2 - Create Unit Test**
@@ -74,12 +81,23 @@ Before getting started, please complete the prerequisities below:
 1. Run a Test on your new detection to check for syntax errors and proper logic
 2. If it passes, you've completed your first detection. 
 
+**Recap of Detection-as-Code**
+1. Code Reuse - With pre-built helpers and libraries, code reuse makes writing detections extremely quick.
+2. Testing - Unit Tests in product create a fast way to get direct feedback on detection code logic.
 
-## Lesson 2 - Tune a Panther Provided Detection for your environment
+
+## Lesson 2 - Tune a Panther Provided Detection
+
+Panther provides over 400+ detections out-of-the-box that can be customized to any environment with either python or rule filters. Using pre-defined Python functions from Panther, we'll be able to easily tune a detection in minutes. Terms we'll use in this section include: 
+
+-[Packs](https://docs.panther.com/writing-detections/detection-packs)
+-[Panther Analysis Repository](https://github.com/panther-labs/panther-analysis)
+-[Rule Filters](https://docs.panther.com/writing-detections/rules/rule-filters)
+
 
 **Part 1 - Clone and Edit a Panther Managed Detection from a Pack**
 
-1. In the Panther Console - Navigate to Build > Packs > Panther Core AWS Pack
+1. In the Panther Console - Navigate to _Build > Packs > Panther Core AWS Pack_
 2. Select the detection called "AWS GuardDuty High Severity Finding"
 3. Select Clone & Edit on the Top Right
 - Note if you're using your own production instance for this workshop, you can not clone a detection more than once.
