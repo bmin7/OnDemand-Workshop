@@ -161,6 +161,10 @@ Panther provides over 400+ detections out-of-the-box that can be customized to a
 ```
 </details>
 
+**Recap Detection-as-Code**
+1. Detections written with Python to allow for easy tuning and change
+2. 
+
 	
 **Part 3 - Tune Detection with Severity Function**
 1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
