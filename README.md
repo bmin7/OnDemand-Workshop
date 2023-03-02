@@ -34,9 +34,10 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 3. Delete the brackets populated. Copy and paste the sample event below into your console:
 
 
-<details><summary>Sample CloudTrail Event</summary>
 
-**CloudTrail Event Log**
+
+<details><summary>Click Here for Sample CloudTrail Event</summary>
+
 ```
 {
 	"additionalEventData": {
@@ -72,6 +73,7 @@ Detection-as-Code starts with the basics of creating a detection with Python cod
 ```
 
 </details>
+
 
 **Part 3 - Writing your detection code**
 
@@ -113,7 +115,10 @@ Panther provides over 400+ detections out-of-the-box that can be customized to a
 2. Select Functions & Tests
 3. Scroll down and populate test with log if not already done
 
-**CloudTrail GuardDuty Log**
+
+
+<details><summary>Click Here for Sample CloudTrail Event</summary>
+
 ```
 {
 "accountId": "123456789012",
@@ -155,14 +160,18 @@ Panther provides over 400+ detections out-of-the-box that can be customized to a
 "updatedAt": "2020-02-14T18:12:22.316Z"
 }
 ```
+<details>
 
-
+	
 **Part 3 - Tune Detection with Severity Function**
 1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
 2. Modify the rule function to alert on events from severity 1 to 10
 3. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
 4. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
 
+
+
+	
 
 ## Lesson 3 - Using Local Developer Tools to Write, Test, and Deploy Detection
 Use the Panther Analysis Tool (PAT) with local developer tools to write and test new detections. 
