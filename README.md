@@ -228,6 +228,7 @@ This section applies everything we've talked about in the above sections. Use ea
 
 
 <details><summary>Click Here for Sample Event</summary>
+
 ```
 {
 	"recipientAccountId": "123456789012",
