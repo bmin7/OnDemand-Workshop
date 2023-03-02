@@ -269,6 +269,8 @@ def rule(event):
 ```	
 </details>
 
+
+
 <details><summary>Lesson 2 Answers</summary>
 ```
 def rule(event):
@@ -283,6 +285,9 @@ def severity(event):
         return "MEDIUM"
 ```
 </details>
+
+	
+	
 
 <details><summary>Lesson 3 Answers</summary>
 
@@ -325,6 +330,8 @@ def severity(event):
 ```
 </details>
 
+
+	
 
 ## Addtional Resources
 **Helpful Links**
