@@ -161,21 +161,19 @@ Panther provides over 400+ detections out-of-the-box that can be customized to a
 ```
 </details>
 
-**Recap Detection-as-Code**
-1. Detections written with Python to allow for easy tuning and change
-2. 
 
-	
 **Part 3 - Tune Detection with Severity Function**
 1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
 2. Modify the rule function to alert on events from severity 1 to 10
 3. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
 4. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
 
+**Recap Detection-as-Code**
+1. Detections written with Python to allow for easy tuning and change
+2. Version Control to reiterate back to the original detection if necessary. 
 
 
 	
-
 ## Lesson 3 - Using Local Developer Tools to Write, Test, and Deploy Detection
 Use the Panther Analysis Tool (PAT) with local developer tools to write and test new detections. 
 
@@ -205,7 +203,59 @@ Use the Panther Analysis Tool (PAT) with local developer tools to write and test
 ```panther_analysis_tool upload --path <path to rule> --api-host DOMAIN --api-token TOKEN```
 11. Check Panther Console for changes
 
+**Recap Detection-as-Code**
+1. Local Development Tools to write, test, and upload detections without the Panther console
+2. Version Control and Rollbacks available with Git commands
+3. Forking of Panther Analysis Repo to manage your own detections
+4. Custom Libraries and threat intelligence available for more usage
 
+
+## Lesson 4: Try it Yourself!
+This section applies everything we've talked about in the above sections. Use each set of sample data as a unit test and create a corresponding detection based on the prompt. A passing unit test will show the success of your detection. 
+
+**Steps for Each Rule**
+1. Create a new rule in the Panther Console
+2. Give it a unique name with your initials
+3. Under the Functions & Test Tab - scroll to the bottom and create a new unit test
+4. Copy and paste the example data for the rule you're working on below
+5. Write a Python Rule 
+6. Test and Verify
+
+**Rule - AWS CloudTrail - Root Password Change**
+- Prompt 1 - Write a detection that triggers an alert when a password is updated 
+- Prompt 2 - Add on to the detection to create a check if a "root" password is updated 
+- Prompt 3 - Trigger an "INFO" level alert if the AWS region is "us-east-1 or us-east-2" otherwise trigger a "HIGH" level alert. 
+
+
+<details><summary>Click Here for Sample Event</summary>
+```
+{
+	"recipientAccountId": "123456789012",
+	"requestParameters": null,
+	"responseElements": {
+		"PasswordUpdated": "Success"
+	},
+	"sourceIPAddress": "111.111.111.111",
+	"eventName": "PasswordUpdated",
+	"eventSource": "signin.amazonaws.com",
+	"eventVersion": "1.05",
+	"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+	"eventID": "1111",
+	"eventType": "AwsConsoleSignIn",
+	"requestID": "1111",
+	"userIdentity": {
+		"principalId": "123456789012",
+		"type": "Root",
+		"accesKeyId": "1111",
+		"accessKeyId": "",
+		"accountId": "123456789012",
+		"arn": "arn:aws:iam::123456789012:root"
+	},
+	"awsRegion": "us-east-1",
+	"eventTime": "2019-01-01T00:00:00Z"
+}
+```
+</details>
 
 ## Addtional Resources
 **Helpful Links**
